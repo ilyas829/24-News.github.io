@@ -17,7 +17,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/style_1.css" rel="stylesheet" type="text/css"/>
     <!-- Modernizr JS -->
-    <script src="js/modernizr-3.5.0.min.js">
+    <script src="js/modernizr-3.5.0.min.js" src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js" >
          async function analyzeText() {
             const endpoint = 'https://24-news.cognitiveservices.azure.com/';
             const apiKey = '5c4e17adc71f488c8cb8106c00dbab92';
@@ -40,6 +40,14 @@
             document.getElementById('output').textContent = JSON.stringify(result, null, 2);
         }
     </script>
+        <style>
+        #webchat {
+            height: 400px;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+    </style>
+    
 </head>
 <body>
 <div class="container-fluid fh5co_header_bg">
@@ -658,6 +666,10 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
 </div>
+
+    <h1>Azure AI Bot Integration</h1>
+    <div id="webchat"></div>
+<iframe src='https://webchat.botframework.com/embed/24-News?s=-25qJ25mHv8.7tXokwzm3SlgkgREHzNtnAX03_rroBRSGyK3ksQg--w'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
