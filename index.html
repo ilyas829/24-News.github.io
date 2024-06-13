@@ -17,7 +17,29 @@
     <!-- Bootstrap CSS -->
     <link href="css/style_1.css" rel="stylesheet" type="text/css"/>
     <!-- Modernizr JS -->
-    <script src="js/modernizr-3.5.0.min.js"></script>
+    <script src="js/modernizr-3.5.0.min.js">
+         async function analyzeText() {
+            const endpoint = 'https://24-news.cognitiveservices.azure.com/';
+            const apiKey = '5c4e17adc71f488c8cb8106c00dbab92';
+            const text = document.getElementById('inputText').value;
+
+            const response = await fetch(endpoint + '/text/analytics/v3.1-preview.3/sentiment', {
+                method: 'POST',
+                headers: {
+                    'Ocp-Apim-Subscription-Key': apiKey,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    documents: [
+                        { id: '1', language: 'en', text: text }
+                    ]
+                })
+            });
+
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        }
+    </script>
 </head>
 <body>
 <div class="container-fluid fh5co_header_bg">
@@ -33,6 +55,10 @@
         </div>
     </div>
 </div>
+        <h1>Azure Language Service Integration</h1>
+    <textarea id="inputText" rows="4" cols="50" placeholder="Enter text here"></textarea><br>
+    <button onclick="analyzeText()">Analyze</button>
+    <pre id="output"></pre>
 <div class="container-fluid">
     <div class="container">
         <div class="row">
