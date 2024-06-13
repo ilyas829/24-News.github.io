@@ -1,7 +1,7 @@
 # 24-News.github.io
 <h1>Overview</h1>
 <br>This project is a news website developed and deployed using Azure Static Web Apps. It leverages Azure Language Services for sentiment analysis of news articles and integrates an Azure AI Bot for user interaction, providing a rich and interactive user experience.<br>
-**<a href="https://orange-island-004535e10.4.azurestaticapps.net/"><h1><center> Project Link </center></h1></a>**<br>
+**   https://orange-island-004535e10.4.azurestaticapps.net/  **<br>
 
 <h1>Features</h1><br>
 Static Website: Azure Web App<br>
